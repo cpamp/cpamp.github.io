@@ -1,5 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://clintpamperin.com/sitemap.xml
-Sitemap: https://www.clintpamperin.com/sitemap.xml
