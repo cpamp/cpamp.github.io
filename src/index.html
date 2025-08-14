@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,14 +12,14 @@
     <style>
         /* Dark mode default */
         :root {
-            --bg: #0b1220;
-            --fg: #e5e7eb;
-            --muted: rgba(229, 231, 235, 0.75);
             --brand: #0ea5e9;
             --card: #0f172a;
             --ring: #22d3ee;
             --shadow: 0 10px 30px rgba(0, 0, 0, .35);
             --radius: 16px;
+            --bg: #0b1220;
+            --fg: #e5e7eb;
+            --muted: rgba(229, 231, 235, 0.75);
             --pill-bg: rgba(255, 255, 255, .06);
             --pill-border-color: rgba(255, 255, 255, .10);
             --btn-bg: rgba(255, 255, 255, .04);
@@ -31,10 +32,10 @@
                 --bg: #f8fafc;
                 --fg: #0b1220;
                 --muted: rgba(0, 0, 0, 0.8);
-                --pill-border-color: rgba(0, 0, 0, 0.1);
                 --pill-bg: rgba(255, 255, 255, .04);
-                --btn-border-color: rgba(0, 0, 0, 0.15);
+                --pill-border-color: rgba(0, 0, 0, 0.1);
                 --btn-bg: rgba(0, 0, 0, 0.06);
+                --btn-border-color: rgba(0, 0, 0, 0.15);
                 --btn-border-color-hover: rgba(0, 0, 0, 0.3);
             }
         }
@@ -43,11 +44,42 @@
             --bg: #f8fafc;
             --fg: #0b1220;
             --muted: rgba(0, 0, 0, 0.8S);
-            --pill-border-color: rgba(0, 0, 0, 0.1);
             --pill-bg: rgba(255, 255, 255, .04);
-            --btn-border-color: rgba(0, 0, 0, 0.15);
+            --pill-border-color: rgba(0, 0, 0, 0.1);
             --btn-bg: rgba(0, 0, 0, 0.06);
+            --btn-border-color: rgba(0, 0, 0, 0.15);
             --btn-border-color-hover: rgba(0, 0, 0, 0.3)
+        }
+
+        body.dark {
+            --bg: #0b1220;
+            --fg: #e5e7eb;
+            --muted: rgba(229, 231, 235, 0.75);
+            --pill-bg: rgba(255, 255, 255, .06);
+            --pill-border-color: rgba(255, 255, 255, .10);
+            --btn-bg: rgba(255, 255, 255, .04);
+            --btn-border-color: rgba(255, 255, 255, .12);
+            --btn-border-color-hover: rgba(255, 255, 255, .28);
+        }
+
+        svg {
+            color: var(--muted);
+        }
+
+        body.light .dark-svg {
+            display: initial;
+        }
+
+        body.dark .light-svg {
+            display: initial;
+        }
+
+        body.dark .dark-svg {
+            display: none;
+        }
+
+        body.light .light-svg {
+            display: none;
         }
 
         body {
@@ -81,7 +113,7 @@
         }
 
         .wrap {
-            max-width: 68ch;
+            max-width: 69ch;
             margin-inline: auto;
             padding: 28px
         }
@@ -226,6 +258,7 @@
         #theme-toggle {
             font-size: 10px;
             padding: 5px;
+            color: var(--muted);
         }
 
         footer {
@@ -292,7 +325,21 @@
         <article class="card" aria-label="Intro">
 
             <div class="top-row">
-                <button id="theme-toggle" aria-label="Toggle dark/light mode" class="btn">🌙</button>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode" class="btn">
+                    <span class="dark-svg">
+                        <svg fill="currentColor" viewBox="0 0 490 490" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M83.095,476.806c24.76,8.419,51.202,13.194,78.81,13.194c135.309,0,245-109.69,245-245s-109.69-245-245-245 c-27.608,0-54.05,4.775-78.81,13.194C179.69,46.037,249.284,137.298,249.284,245S179.69,443.963,83.095,476.806z M279.909,245 c0-84.627-38.667-162.484-101.801-213.769C288.78,39.536,376.28,132.24,376.28,245s-87.5,205.464-198.172,213.769 C241.242,407.484,279.909,329.627,279.909,245z" />
+                        </svg>
+                    </span>
+                    <span class="light-svg">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2V4M12 20V22M4 12H2M6.31412 6.31412L4.8999 4.8999M17.6859 6.31412L19.1001 4.8999M6.31412 17.69L4.8999 19.1042M17.6859 17.69L19.1001 19.1042M22 12H20M17 12C17 14.7614 14.7614 17 12 17C9.23858 17 7 14.7614 7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
             </div>
             <header>
                 <div class="avatar" aria-hidden="true">CP</div>
@@ -300,7 +347,15 @@
                     <div>
                         <h1>Clint Pamperin</h1>
                     </div>
-                    <p>Full‑stack Engineer • Cloud Platforms • Scalable Web Apps</p>
+                    <p>Full‑stack Engineer • Cloud Platforms • Applied AI</p>
+                    <p>
+                        <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                            viewBox="0 0 413.099 413.099">
+                            <path
+                                d="M206.549,0L206.549,0c-82.6,0-149.3,66.7-149.3,149.3c0,28.8,9.2,56.3,22,78.899l97.3,168.399c6.1,11,18.4,16.5,30,16.5 c11.601,0,23.3-5.5,30-16.5l97.3-168.299c12.9-22.601,22-49.601,22-78.901C355.849,66.8,289.149,0,206.549,0z M206.549,193.4 c-30,0-54.5-24.5-54.5-54.5s24.5-54.5,54.5-54.5s54.5,24.5,54.5,54.5C261.049,169,236.549,193.4,206.549,193.4z" />
+                        </svg>
+                        Green Bay, WI
+                    </p>
                     <nav class="actions" aria-label="Primary">
                         <a class="btn" rel="me noopener" target="_blank" href="https://github.com/cpamp"
                             aria-label="GitHub">
@@ -363,23 +418,20 @@
         const toggle = document.getElementById('theme-toggle');
         const body = document.body;
 
-        function updateToggleIcon() {
-            toggle.textContent = body.classList.contains('light') ? '☀️' : '🌙';
-        }
-
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
-            body.classList.toggle('light', savedTheme === 'light');
+            body.classList.add(savedTheme);
         } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
             body.classList.add('light');
+        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            body.classList.add('dark');
         }
-        updateToggleIcon();
 
         toggle.addEventListener('click', () => {
             body.classList.toggle('light');
+            body.classList.toggle('dark');
             const current = body.classList.contains('light') ? 'light' : 'dark';
             localStorage.setItem('theme', current);
-            updateToggleIcon();
         });
 
     </script>
