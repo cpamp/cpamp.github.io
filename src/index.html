@@ -62,6 +62,16 @@
             --btn-border-color-hover: rgba(255, 255, 255, .28);
         }
 
+        * {
+            transition: none;
+        }
+
+        html.theme-transition * {
+            transition: background-color 0.6s ease,
+                color 0.6s ease,
+                border-color 0.6s ease;
+        }
+
         svg {
             color: var(--muted);
         }
@@ -414,6 +424,9 @@
     </main>
 
     <script>
+        window.addEventListener('load', () => {
+            document.documentElement.classList.add('theme-transition')
+        })
         document.getElementById('year').textContent = new Date().getFullYear();
         const toggle = document.getElementById('theme-toggle');
         const body = document.body;
