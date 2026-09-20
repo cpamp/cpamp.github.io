@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Clint Pamperin — Software Engineer</title>
     <meta name="description" content="Clint Pamperin, software engineer in Green Bay, Wisconsin. Full-stack applications, cloud platforms, and thoughtful delivery from idea to production.">
-    <meta name="theme-color" content="#f2efe7">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%232e4539'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia' font-size='34' fill='%23f2efe7'%3Ecp%3C/text%3E%3C/svg%3E">
+    <meta name="theme-color" content="#f1f3f5">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%232f5f87'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia' font-size='34' fill='%23f1f3f5'%3Ecp%3C/text%3E%3C/svg%3E">
     <script>
         try {
             const theme = localStorage.getItem('theme');
@@ -14,11 +14,11 @@
         } catch (_) {}
     </script>
     <style>
-        :root { color-scheme: light; --bg: #f2efe7; --ink: #252b25; --muted: #62675d; --line: #bfc3b5; --accent: #38563e; --wash: #e6e8dc; }
+        :root { color-scheme: light; --bg: #f1f3f5; --ink: #202831; --muted: #5f6b78; --line: #c2cbd4; --accent: #2f5f87; --wash: #e1e8ef; }
         @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) { color-scheme: dark; --bg: #1b211d; --ink: #edece2; --muted: #aeb8aa; --line: #465146; --accent: #bfd2a5; --wash: #252f27; }
+            :root:not([data-theme="light"]) { color-scheme: dark; --bg: #1c242d; --ink: #edf2f6; --muted: #b7c4d0; --line: #465362; --accent: #8db8db; --wash: #28333e; }
         }
-        :root[data-theme="dark"] { color-scheme: dark; --bg: #1b211d; --ink: #edece2; --muted: #aeb8aa; --line: #465146; --accent: #bfd2a5; --wash: #252f27; }
+        :root[data-theme="dark"] { color-scheme: dark; --bg: #1c242d; --ink: #edf2f6; --muted: #b7c4d0; --line: #465362; --accent: #8db8db; --wash: #28333e; }
         * { box-sizing: border-box; }
         body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
         a { color: inherit; text-underline-offset: 5px; text-decoration-thickness: 1px; }
@@ -150,7 +150,7 @@
             const dark = isDark();
             document.getElementById('theme-label').textContent = dark ? 'Light mode' : 'Dark mode';
             toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
-            document.querySelector('meta[name="theme-color"]').content = dark ? '#1b211d' : '#f2efe7';
+            document.querySelector('meta[name="theme-color"]').content = dark ? '#1c242d' : '#f1f3f5';
         }
         toggle.hidden = false;
         updateTheme();
